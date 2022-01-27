@@ -1,0 +1,23 @@
+# cache
+.eslintcache
+*.tsbuildinfo
+
+# dependencies
+node_modules/
+
+# production
+dist/
+
+# env
+.env.
+.env.test
+.env.local
+.env.dev.local
+
+# log
+*.log
+logs
+npm-debug.log*
+
+# misc
+.DS_Store

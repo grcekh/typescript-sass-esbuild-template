@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "ES6",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "baseUrl": "./src",
+    "paths": {}
+  },
+  "include": ["src", "**/*.ts"],
+  "exclude": ["node_modules"]
+}

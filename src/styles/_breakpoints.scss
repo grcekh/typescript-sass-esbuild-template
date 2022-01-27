@@ -1,0 +1,27 @@
+$xsmall: 320px;
+$small: 448px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1280px;
+$xxlarge: 1440px;
+
+$breakpoints: (
+  "xsmall": (
+    min-width: $xsmall,
+  ),
+  "small": (
+    min-width: $small,
+  ),
+  "medium": (
+    min-width: $medium,
+  ),
+  "large": (
+    min-width: $large,
+  ),
+  "xlarge": (
+    min-width: $xlarge,
+  ),
+  "xxlarge": (
+    min-width: $xxlarge,
+  ),
+) !default;

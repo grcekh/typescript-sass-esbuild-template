@@ -1,0 +1,59 @@
+@use "breakpoints" as *;
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-column-count), 1fr);
+  column-gap: grid-gutter();
+  width: 100%;
+  max-width: var(--global-max-width);
+  margin: 0 auto;
+  padding: 0 grid-margin();
+}
+
+@mixin center {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Error: Breakpoint `#{$breakpoint}` not found.";
+  }
+}
+
+@mixin type-item($type-name, $style: normal) {
+  font-family: var(--font-family-base);
+  font-size: font-size($type-name);
+  line-height: line-height($type-name);
+  letter-spacing: letter-spacing($type-name);
+  font-weight: font-weight($type-name);
+  font-style: $style; // normal or italic
+}
+
+// Helpers for getting dynamic CSS variables
+@function test-color() {
+  @return var(--test);
+}
+@function grid-gutter() {
+  @return var(--grid-gutter);
+}
+@function grid-margin() {
+  @return var(--grid-margin);
+}
+@function font-size($type-name) {
+  @return var(--font-size-#{$type-name});
+}
+@function line-height($type-name) {
+  @return var(--line-height-#{$type-name});
+}
+@function letter-spacing($type-name) {
+  @return var(--letter-spacing-#{$type-name});
+}
+@function font-weight($type-name) {
+  @return var(--font-weight-#{$type-name});
+}

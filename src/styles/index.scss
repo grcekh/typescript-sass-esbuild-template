@@ -1,0 +1,27 @@
+@use "reset" as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "global" as *;
+@use "typography" as *;
+
+.container {
+  @include center;
+  grid-column: 1/13;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .heading {
+    padding: var(--spacer-4) 0;
+  }
+
+  .video {
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+
+    @include breakpoint("medium") {
+      max-width: 500px;
+    }
+  }
+}

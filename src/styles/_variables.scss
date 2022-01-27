@@ -1,0 +1,78 @@
+@use "mixins" as *;
+
+:root {
+  // Colors
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-test: yellow;
+  --color-background: var(--color-black);
+  --color-foreground: var(--color-white);
+
+  // Global
+  --global-max-width: 1440px;
+  --grid-column-count: 12;
+  --grid-gutter: 0px;
+  --grid-margin: 24px;
+
+  // Spacers
+  --spacer-1: 8px;
+  --spacer-2: 12px;
+  --spacer-3: 16px;
+  --spacer-4: 24px;
+  --spacer-5: 32px;
+  --spacer-6: 64px;
+
+  // Z-Index
+  --z-index-neg: -1;
+  --z-index-0: 0;
+  --z-index-1: 1;
+  --z-index-2: 2;
+  --z-index-3: 3;
+  --z-index-4: 4;
+  --z-index-5: 5;
+  --z-index-10: 10;
+  --z-index-modal: 100;
+  --z-index-max: 999;
+
+  // Typography
+  --font-family-base: "Inter", "Helvetica", sans-serif;
+  --font-size-base: 62.5%;
+  --letter-spacing-base: 0;
+  --font-weight-regular: 400;
+  --font-weight-bold: 500;
+
+  --font-size-title: 1.8rem;
+  --line-height-title: 1.8rem;
+  --letter-spacing-title: -0.04em;
+  --font-weight-title: var(--font-weight-regular);
+
+  --font-size-header-1: 1.5rem;
+  --line-height-header-1: 1.5rem;
+  --letter-spacing-header-1: -0.04em;
+  --font-weight-header-1: var(--font-weight-bold);
+
+  --font-size-body: 1.3rem;
+  --line-height-body: 1.3rem;
+  --letter-spacing-body: 0;
+  --font-weight-body: var(--font-weight-regular);
+
+  @include breakpoint("small") {
+    // Colors
+    --color-test: red;
+  }
+
+  @include breakpoint("medium") {
+    // Colors
+    --color-test: blue;
+
+    // Global
+    --grid-gutter: 24px;
+    --grid-margin: 128px;
+  }
+
+  @include breakpoint("large") {
+    // Colors
+    --color-test: green;
+  }
+}

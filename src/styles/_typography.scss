@@ -1,0 +1,81 @@
+@use "mixins" as *;
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../public/fonts/Inter-Regular.woff2?v=3.19") format("woff2"),
+    url("../../public/fonts/Inter-Regular.woff?v=3.19") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span,
+div,
+input,
+textarea,
+label,
+select,
+button {
+  @include type-item(body);
+  color: var(--color-foreground);
+}
+
+b,
+strong,
+p,
+span,
+div,
+input,
+textarea,
+label,
+select,
+button {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+select {
+  appearance: none;
+  border: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+h1 {
+  @include type-item(title);
+}
+
+h2,
+h3 {
+  @include type-item(header-1);
+}
+
+p {
+  @include type-item(body);
+}
+
+a {
+  text-decoration: none;
+}
